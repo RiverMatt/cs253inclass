@@ -7,14 +7,18 @@
 
 int main(int argc, char** argv) {
 	
+	/*
 	char* args[argc];
-	for (int i = 0; i < argc; i++) {
+	for (int i = 0; i < argc - 1; i++) {
 		args[i] = argv[i + 1]; 
 	}
-
-	//args[argc] = NULL;
 	
-	//char* args[] = {"ls", "-lF", "lsc.c", NULL};
+	args[argc - 1] = NULL;
+	*/
+
+	char* args[] = {"ls", "-lF", NULL, NULL};
+	args[2] = argv[1];
+
 	int pid = fork();
 	
 	if (pid == 0) {

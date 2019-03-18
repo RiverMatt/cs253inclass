@@ -1,6 +1,5 @@
-# Configure gcc for a production build
-CFLAGS = -Wall -std=c99
 EXE = lsc
+CFLAGS = -Wall -std=c99
 OBJS = $(EXE).o
 
 #------Build everything
@@ -11,12 +10,12 @@ debug: CFLAGS += -DDEBUG -g -O0
 debug: $(EXE)
 
 
-#------Build the product
+#------Build the program
 $(EXE): $(OBJS)
 	gcc $(CFLAGS) $^ -o $@
 
 
-#------This target builds a debug version and executes the product under valgrind
+#------This target builds a debug version and executes the program under valgrind
 valgrind: debug
 	valgrind --leak-check=yes --leak-check=full --show-leak-kinds=all  --track-origins=yes bugfest
 
