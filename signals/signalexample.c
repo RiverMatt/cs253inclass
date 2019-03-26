@@ -3,7 +3,8 @@
 #include <signal.h>
 
 #define _POSIX_SOURCE
-extern char run = 1;
+
+static char run = 1;
 
 void myHandler(int sigNumber) {
 	if (sigNumber == SIGUSR1) {

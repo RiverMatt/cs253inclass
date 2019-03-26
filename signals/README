@@ -1,0 +1,6 @@
+After building the program, run it with
+	$ signalexample &
+This will run it in the background and show the PID.
+Send the signal with
+	$ kill -s SIGUSR1 <PID>
+
